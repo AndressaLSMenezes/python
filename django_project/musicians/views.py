@@ -5,7 +5,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from musicians.models import Musician
-from django.forms.models import model_to_dict  # Novo
+from django.forms.models import model_to_dict
 
 
 class MusicianView(APIView):
@@ -18,7 +18,7 @@ class MusicianView(APIView):
             instrument=musician_data["instrument"],
         )
 
-        return Response(model_to_dict(musician), 201)  # Novo
+        return Response(model_to_dict(musician), 201)
 
     def get(self, request):
         musicians = Musician.objects.all()
